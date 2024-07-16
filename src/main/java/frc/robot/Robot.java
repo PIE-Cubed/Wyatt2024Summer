@@ -22,11 +22,14 @@ public class Robot extends TimedRobot {
   private final SendableChooser<String> m_chooser;
 
   public Controller controller;
+  public long startTime;
   
 
   public Robot() {
     m_chooser = new SendableChooser<>();
     SmartDashboard.putNumber("Test", 1);
+
+    controller = new Controller();
 
 
   }
@@ -94,12 +97,24 @@ public class Robot extends TimedRobot {
   /** This function is called once when the robot is disabled. */
   @Override
   public void disabledInit() {
-    controller = new Controller();
+    startTime = System.currentTimeMillis();
+
   }
 
   /** This function is called periodically when disabled. */
   @Override
   public void disabledPeriodic() {
+    long updateTime;
+
+    updateTime = System.currentTimeMillis();
+    //System.out.println("In DisPer" + startTime + " and " + updateTime);
+    if ((updateTime - startTime) > 1000) {
+
+      controller.updatePort();
+      startTime = updateTime;
+      System.out.println("Updated Something");
+
+    }
 
   }
 

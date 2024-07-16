@@ -66,8 +66,8 @@ public class Controller {
         int updateDriverPort;
         int updateManipulatorPort;
 
-        updateDriverPort = getDriverPort();
-        updateManipulatorPort = getmanipulatorPort();
+        updateDriverPort        = getDriverPort();
+        updateManipulatorPort   = getmanipulatorPort();
         
 
         if (updateDriverPort != driverPort && updateDriverPort != UNKNOWNPORT) {
