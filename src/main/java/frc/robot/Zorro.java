@@ -4,6 +4,25 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 
+/*  Comments from Mr. McMahon...
+ *  This looks a lot like the XboxController class.  That is a good thing!
+ *  What you have here all looks great!  I should have mentioned this earlier, but most of my comments
+ *  have to do with making this class just like the XboxController.  Nothing wrong with what you did.  Just taking it 
+ *  to next level and you even get to use inheritance.  Once you look over the XboxController code you'll
+ *  probably see that this is a bigger task than you thought.  Once you make a solid Class here we'll be using it
+ *  reusing it here for years to come!
+ *  You may even want to call this the ZorroController to emphasize that its like the XboxController
+ *  You can also click on the XboxController to see how they did things.
+ *  https://github.wpilib.org/allwpilib/docs/release/java/src-html/edu/wpi/first/wpilibj/XboxController.html#line.117
+ *  For instance you could have the ZorroController inherit GenericHID.  Use extend for inheritence.  See xboxController code.
+ *  You can then add m_port as a class variable and save the port there.
+ *
+ *  You may want to pass in (int port) in your constructor and move the getZorroPort to our Controller class.
+ *  Your function names could change to get getAButton() instead of zorroA().
+ *  you may want to have getAButton() use getRawButton()
+                         getAButtonPressed() use getRawButtonPressed()
+                         getAButtonReleased() use getRawButtonReleased()
+ */
 public class Zorro {
 
     private int zorroPort;
